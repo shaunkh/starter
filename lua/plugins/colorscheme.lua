@@ -1,5 +1,7 @@
 return {
-  { "EdenEast/nightfox.nvim" },
+  {
+    "EdenEast/nightfox.nvim",
+  },
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
