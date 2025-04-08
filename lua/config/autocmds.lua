@@ -8,13 +8,13 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 --
 --
-local forge_fmt_group = vim.api.nvim_create_augroup("autocmds for forge", { clear = true })
-
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  pattern = { "*.sol" },
-  desc = "Auto-format solidity files after saving",
-  callback = function()
-    vim.cmd("silent! !forge fmt")
-  end,
-  group = forge_fmt_group,
-})
+-- local forge_fmt_group = vim.api.nvim_create_augroup("autocmds for forge", { clear = true })
+--
+-- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+--   pattern = { "*.sol" },
+--   desc = "Auto-format solidity files after saving",
+--   callback = function()
+--     vim.cmd("silent! !forge fmt")
+--   end,
+--   group = forge_fmt_group,
+-- })
