@@ -59,7 +59,9 @@ return {
         yaml = { "prettier" },
         markdown = { "prettier" },
         graphql = { "prettier" },
+        sql = { "sql_formatter" },
         liquid = { "prettier" },
+        nix = { "nixfmt" },
       },
       -- The options you set here will be merged with the builtin formatters.
       -- You can also define any custom formatters here.
