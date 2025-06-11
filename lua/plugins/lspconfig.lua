@@ -206,13 +206,6 @@ return {
       require("lspconfig")[server].setup(server_opts)
     end
 
-    -- get all the servers that are available through mason-lspconfig
-    local have_mason, mlsp = pcall(require, "mason-lspconfig")
-    local all_mslp_servers = {}
-    if have_mason then
-      all_mslp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
-    end
-
     local ensure_installed = {} ---@type string[]
     for server, server_opts in pairs(servers) do
       if server_opts then
@@ -226,17 +219,6 @@ return {
           end
         end
       end
-    end
-
-    if have_mason then
-      mlsp.setup({
-        ensure_installed = vim.tbl_deep_extend(
-          "force",
-          ensure_installed,
-          LazyVim.opts("mason-lspconfig.nvim").ensure_installed or {}
-        ),
-        handlers = { setup },
-      })
     end
 
     if LazyVim.lsp.is_enabled("denols") and LazyVim.lsp.is_enabled("vtsls") then
