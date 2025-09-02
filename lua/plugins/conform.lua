@@ -34,6 +34,7 @@ return {
     end)
   end,
   opts = function()
+    local plugin = require("lazy.core.config").plugins["conform.nvim"]
     ---@type conform.setupOpts
     local opts = {
       default_format_opts = {
@@ -45,8 +46,21 @@ return {
       formatters_by_ft = {
         lua = { "stylua" },
         sh = { "shfmt" },
-        -- nix = { "nixfmt" },
         python = { "isort", "black" },
+        javascript = { "prettier" },
+        typescript = { "prettier" },
+        javascriptreact = { "prettier" },
+        typescriptreact = { "prettier" },
+        svelte = { "prettier" },
+        css = { "prettier" },
+        html = { "prettier" },
+        json = { "prettier" },
+        yaml = { "prettier" },
+        markdown = { "prettier" },
+        graphql = { "prettier" },
+        sql = { "sql_formatter" },
+        liquid = { "prettier" },
+        nix = { "nixpkgs-fmt" },
       },
       -- The options you set here will be merged with the builtin formatters.
       -- You can also define any custom formatters here.
