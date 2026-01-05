@@ -46,7 +46,7 @@ return {
       formatters_by_ft = {
         lua = { "stylua" },
         sh = { "shfmt" },
-        python = { "isort", "black" },
+        python = { "ruff", "isort" },
         javascript = { "prettier" },
         typescript = { "prettier" },
         javascriptreact = { "prettier" },
@@ -60,7 +60,7 @@ return {
         graphql = { "prettier" },
         sql = { "sql_formatter" },
         liquid = { "prettier" },
-        nix = { "nixpkgs-fmt" },
+        nix = { "nixfmt" },
       },
       -- The options you set here will be merged with the builtin formatters.
       -- You can also define any custom formatters here.
